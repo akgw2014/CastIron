@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LookupTable xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.approuter.com/schemas/2003/1/xformLookup/"><tableName>RightNowIncidentUrgency</tableName><description>Urgency ID and value</description><entries><entry><key>55</key><value>Immediate</value></entry><entry><key>56</key><value>High</value></entry><entry><key>57</key><value>Medium</value></entry><entry><key>58</key><value>Low</value></entry></entries><defaultValue></defaultValue><ifNilValue></ifNilValue></LookupTable>

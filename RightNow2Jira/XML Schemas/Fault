@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="Fault.XSD" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="Fault">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorVar">
+        <xs:complexType>
+          <xs:sequence>
+	     <xs:element maxOccurs="unbounded" name="ErrorData">
+	        <xs:complexType>
+	          <xs:sequence>
+		      <xs:element name="ErrorMessage" type="xs:string"/><xs:element name="ErrorName" type="xs:string"/><xs:element name="ErrorCode" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element><xs:element minOccurs="0" name="FaultVar">
+        <xs:complexType>
+          <xs:sequence>
+ 	     <xs:element maxOccurs="unbounded" name="FaultData">
+	        <xs:complexType>
+	          <xs:sequence>
+        	    <xs:element name="FaultName" type="xs:string"/><xs:element name="FaultMsg" type="xs:string"/><xs:element name="ActivityID" type="xs:integer"/><xs:element name="ActivityName" type="xs:string"/><xs:element name="FaultTime" type="xs:dateTime"/></xs:sequence></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

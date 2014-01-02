@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://hawk:8080/rpc/soap/jirasoapservice-v2" xmlns:ns3="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns4="http://beans.soap.rpc.jira.atlassian.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="getAttachmentFromJira1.xsd"/><xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="getAttachmentFromJira2.xsd"/><xs:element name="getAttachmentsFromIssueResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="multiRef">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="author" type="xs:string"/><xs:element name="created" type="xs:dateTime"/><xs:element name="filename" type="xs:string"/><xs:element name="filesize">
+								<xs:complexType>
+									<xs:attribute name="href" type="xs:string" use="required"/></xs:complexType></xs:element><xs:element name="id" type="xs:unsignedInt"/><xs:element name="mimetype" type="xs:string"/></xs:sequence><xs:attribute name="id" type="xs:string" use="required"/><xs:attribute ref="soapenc:root" use="required"/><xs:attribute ref="soapenv:encodingStyle" use="required"/></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:schema></main><include name="getAttachmentFromJira1.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attribute name="root" type="xs:unsignedByte"/></xs:schema></include><include name="getAttachmentFromJira2.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attribute name="encodingStyle" type="xs:string"/></xs:schema></include></document>

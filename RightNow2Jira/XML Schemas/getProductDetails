@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="getProductDetails.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="prod">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="lvl_id1--integer" type="xs:unsignedByte"/><xs:element name="lvl_id2--integer" type="xs:unsignedByte"/></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

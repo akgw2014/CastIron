@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="getCommentJson2Xml.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="created" type="xs:string"/><xs:element name="author">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="active" type="xs:boolean"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="displayName" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="updateAuthor">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="active" type="xs:boolean"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="displayName" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="self" type="xs:string"/><xs:element name="updated" type="xs:string"/><xs:element name="body" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

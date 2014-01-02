@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><userScript xmlns="http://www.approuter.com/schemas/2003/1/UserCallouts/"><functionName>assertDateStringIsPDT</functionName><arguments><argument required="true" type="string" name="dateStr"/></arguments><result type="string"/><body>if(dateStr.indexOf("PDT") == -1) {
+  throw "ignoreDateTime did not have expected time zone " + dateStr;
+}
+
+return dateStr;</body></userScript>

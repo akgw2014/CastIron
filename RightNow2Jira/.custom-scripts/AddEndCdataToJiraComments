@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><userScript xmlns="http://www.approuter.com/schemas/2003/1/UserCallouts/"><functionName>AddEndCdataToJiraComments</functionName><arguments><argument required="true" type="string" name="in1"/></arguments><result type="string"/><body>var str=in1;
+var out1=str.replace(/&lt;\/body&gt;\s\s\s\s&lt;created xsi:type=\"xsd:dateTime\"&gt;/gi,"]]&gt;&lt;/body&gt;&lt;created xsi:type=\"xsd:dateTime\"&gt;"); 
+return out1;</body></userScript>

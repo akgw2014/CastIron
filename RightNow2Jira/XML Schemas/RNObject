@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="RNObject.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="connector_ret">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="function">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ret_val">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="pair">
+                      <xs:complexType mixed="true">
+                        <xs:sequence minOccurs="0">
+                          <xs:element maxOccurs="unbounded" minOccurs="0" name="pair">
+                            <xs:complexType mixed="true">
+                              <xs:sequence minOccurs="0">
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="pair">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="name" type="xs:string" use="optional"/><xs:attribute name="type" type="xs:string" use="optional"/></xs:extension></xs:simpleContent></xs:complexType></xs:element></xs:sequence><xs:attribute name="name" type="xs:string" use="optional"/><xs:attribute name="type" type="xs:string" use="optional"/></xs:complexType></xs:element></xs:sequence><xs:attribute name="name" type="xs:string" use="optional"/><xs:attribute name="type" type="xs:string" use="optional"/></xs:complexType></xs:element></xs:sequence><xs:attribute name="name" type="xs:string" use="optional"/><xs:attribute name="type" type="xs:string" use="optional"/></xs:complexType></xs:element></xs:sequence><xs:attribute name="name" type="xs:string" use="optional"/></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

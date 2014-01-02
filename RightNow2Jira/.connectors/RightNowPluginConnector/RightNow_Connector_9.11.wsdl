@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Cast Iron RightNow Connector
+  Compatible with RightNow Nov09 Release (API version 9.11)
+  RightNow WSDL for RightNow 9.11
+  Copyright 2010 Cast Iron Systems, Inc.
+  
+  Author: Cast Iron Systems
+  Version 1.0
+
+  Licensed Materials - Property of IBM
+  Restricted Materials of IBM
+  92358CX, 92358DX, 92358FX, 92358GX, 92358HX, 92358JX, D0H3PLL, D0H44LL, D0H3VLL, D0H47LL
+  Copyright IBM Corp. 2003, 2010 All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<wsdl:definitions name="RightNow_Connector" targetNamespace="http://www.approuter.com/connectors/wsdl"
+  xmlns:tns="http://www.approuter.com/connectors/wsdl"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:tns1="http://www.rightnow.com/objects"
+  xmlns:fns="http://www.rightnow.com/objects/fault"
+  xmlns:api="http://www.approuter.com/schemas/cdk/api/"
+  xmlns:conf="http://www.approuter.com/schemas/cdk/api/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+      targetNamespace="http://www.approuter.com/schemas/cdk/api/" xmlns="http://www.approuter.com/schemas/cdk/api/"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:cca="http://www.approuter.com/schemas/cdk/api/">
+      <xs:import namespace="http://www.approuter.com/schemas/cdk/api/" schemaLocation="ci-connector-api.xsd"/>
+      <xs:element name="TestConnection" type="cca:TestConnection"/>
+      <xs:element name="TestConnectionResponse" type="cca:TestConnectionResponse" />
+      <xs:element name="ListObjects" type="cca:ListObjects"/>
+      <xs:element name="ListObjectsResponse" type="cca:ListObjectsResponse"/>
+      <xs:element name="DescribeObject" type="cca:DescribeObject"/>
+      <xs:element name="DescribeObjectResponse" type="cca:DescribeObjectResponse"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.rightnow.com/objects" xmlns="http://www.rightnow.com/objects"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">      
+      <xs:complexType name="RNObject"/>   
+      <!-- SOAP Header message for interface -->
+      <xs:element name="CallHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="jobId" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- RightNow Response Type -->
+      <xs:complexType name="Response">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="function">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ret_val">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:integer">
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                        <xs:attribute name="type" type="xs:string"/>
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required"/>
+              <xs:attribute name="id" type="xs:string"/>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <!-- Object APIs -->
+      <xs:complexType name="FlowExecute">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="c_id--integer" type="xs:integer"/>
+          <xs:element minOccurs="0" name="entry_point--string" type="xs:string"/>
+          <xs:element minOccurs="1" name="flow_id--integer" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:element type="FlowExecute" name="FlowExecute"/>
+      <xs:element name="FlowExecuteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Response" type="Response"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Create">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="RNObject" type="RNObject"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Response" type="Response"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Destroy">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="RNObject" type="RNObject"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DestroyResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Response" type="Response"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Get">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="RNObject" type="RNObject"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="RNObject" type="RNObject"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Move">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="RNObject" type="RNObject"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MoveResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Response" type="Response"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Update">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="RNObject" type="RNObject"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Response" type="Response"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- Search API -->
+      <xs:complexType name="search_args">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="name--string" type="xs:string"/>
+          <xs:element minOccurs="1" name="compare_val--string" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Search">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="view_id--integer" type="xs:integer"/>
+            <xs:element minOccurs="1" name="max_rows--integer" type="xs:integer"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="search_args" type="search_args"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SearchResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="row">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="unbounded" name="col">
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                          <xs:attribute name="id" type="xs:integer"/>
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="id" type="xs:integer"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      
+      <!-- Lookup API -->
+      <xs:complexType name="LookupArgs">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string"/>
+          <xs:element name="table" type="LookupIDEnum"/>
+          <xs:element name="lookup_string" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="LookupIDEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="accounts"/>
+          <xs:enumeration value="categories"/>
+          <xs:enumeration value="contacts"/>
+          <xs:enumeration value="dispositions"/>
+          <xs:enumeration value="incidents"/>
+          <xs:enumeration value="menu_items"/>
+          <xs:enumeration value="orgs"/>
+          <xs:enumeration value="products"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="LookupResponse">
+        <xs:sequence>
+          <xs:element name="id" type="xs:string"/>
+          <xs:element name="ret_val" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="LookupIDForName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="LookupArgs" type="LookupArgs"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LookupIDForNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="LookupResponse" type="LookupResponse"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- Query APIs  -->
+      <xs:complexType name="Query">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="id" type="xs:string" use="required"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="StrResponse">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="id" type="xs:string"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:complexType name="IntResponse">
+        <xs:simpleContent>
+          <xs:extension base="xs:integer">
+            <xs:attribute name="id" type="xs:string"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:element name="SQLGetInt">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="query_str" type="Query"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SQLGetIntResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="ret_val" type="IntResponse"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SQLGetStr">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="query_str" type="Query"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SQLGetStrResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="ret_val" type="StrResponse"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SQLGetTime">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="query_str" type="Query"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SQLGetTimeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="ret_val" type="IntResponse"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.rightnow.com/objects/fault" xmlns="http://www.rightnow.com/objects/fault"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <!-- Fault types -->
+      <xs:complexType name="connector_ret">
+        <xs:sequence>
+          <xs:element ref="connector_error" minOccurs="1"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="connector_ret" type="connector_ret"/>
+      <xs:element name="connector_error" type="xs:string"/>
+    </xs:schema>
+      <xs:schema version="1.0" targetNamespace="http://www.approuter.com/schemas/cdk/api/"
+          xmlns:tns="http://www.approuter.com/schemas/cdk/api/"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+          <xs:element name="details">
+              <xs:complexType>
+                  <xs:sequence>
+                      <xs:element name="Server" type="xs:string"/>
+                      <xs:element name="ServerPort" type="xs:int"/>
+                      <xs:element name="URI" type="xs:string"/>
+                      <xs:element name="ServerSecure" type="xs:boolean"/>
+                      <xs:element name="SecureStr" type="xs:string"/>
+                  </xs:sequence>
+              </xs:complexType>
+          </xs:element>
+      </xs:schema>
+  </wsdl:types>
+  <!-- Required Interfaces -->
+  <wsdl:message name="TestConnection">
+    <wsdl:part name="request" element="api:TestConnection"/>
+  </wsdl:message>
+  <wsdl:message name="TestConnectionResponse">
+    <wsdl:part name="response" element="api:TestConnectionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ListObjects">
+    <wsdl:part name="request" element="api:ListObjects"/>
+  </wsdl:message>
+  <wsdl:message name="ListObjectsResponse">
+    <wsdl:part name="response" element="api:ListObjectsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeObject">
+    <wsdl:part name="request" element="api:DescribeObject"/>
+  </wsdl:message>
+  <wsdl:message name="DescribeObjectResponse">
+    <wsdl:part name="response" element="api:DescribeObjectResponse"/>
+  </wsdl:message>
+  <!-- User Interfaces -->
+    <wsdl:message name="Flow_ExecuteRequest">
+        <wsdl:part name="request" element="tns1:FlowExecute"/>
+    </wsdl:message>
+    <wsdl:message name="Flow_ExecuteResponse">
+        <wsdl:part name="response" element="tns1:FlowExecuteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="CreateRequest">
+        <wsdl:part name="request" element="tns1:Create"/>
+    </wsdl:message>
+    <wsdl:message name="CreateResponse">
+        <wsdl:part name="response" element="tns1:CreateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="DestroyRequest">
+        <wsdl:part name="request" element="tns1:Destroy"/>
+    </wsdl:message>
+    <wsdl:message name="DestroyResponse">
+        <wsdl:part name="response" element="tns1:DestroyResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetRequest">
+        <wsdl:part name="request" element="tns1:Get"/>
+    </wsdl:message>
+    <wsdl:message name="GetResponse">
+        <wsdl:part name="response" element="tns1:GetResponse"/>
+    </wsdl:message>
+    <wsdl:message name="LookupIDForNameRequest">
+        <wsdl:part name="request" element="tns1:LookupIDForName"/>
+    </wsdl:message>
+    <wsdl:message name="LookupIDForNameResponse">
+        <wsdl:part name="response" element="tns1:LookupIDForNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="MoveRequest">
+        <wsdl:part name="request" element="tns1:Move"/>
+    </wsdl:message>
+    <wsdl:message name="MoveResponse">
+        <wsdl:part name="response" element="tns1:MoveResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SQLGetIntRequest">
+        <wsdl:part name="request" element="tns1:SQLGetInt"/>
+    </wsdl:message>
+    <wsdl:message name="SQLGetIntResponse">
+        <wsdl:part name="response" element="tns1:SQLGetIntResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SQLGetStrRequest">
+        <wsdl:part name="request" element="tns1:SQLGetStr"/>
+    </wsdl:message>
+    <wsdl:message name="SQLGetStrResponse">
+        <wsdl:part name="response" element="tns1:SQLGetStrResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SQLGetTimeRequest">
+        <wsdl:part name="request" element="tns1:SQLGetTime"/>
+    </wsdl:message>
+    <wsdl:message name="SQLGetTimeResponse">
+        <wsdl:part name="response" element="tns1:SQLGetTimeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SearchRequest">
+        <wsdl:part name="request" element="tns1:Search"/>
+    </wsdl:message>
+    <wsdl:message name="SearchResponse">
+        <wsdl:part name="response" element="tns1:SearchResult"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateRequest">
+        <wsdl:part name="request" element="tns1:Update"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateResponse">
+        <wsdl:part name="response" element="tns1:UpdateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="callHeader">
+        <wsdl:part name="CallHeader" element="tns1:CallHeader"/>
+    </wsdl:message>
+    <wsdl:message name="details">
+        <wsdl:part name="details" element="conf:details"/>
+    </wsdl:message>    
+    <wsdl:message name="RightNowLoginErrorFault">
+        <wsdl:part name="fault" element="fns:connector_error"/>
+    </wsdl:message>
+    <wsdl:message name="RightNowConnectorFault">
+        <wsdl:part name="fault" element="fns:connector_ret"/>
+    </wsdl:message>
+  <wsdl:portType name="Soap">
+    <wsdl:operation name="TestConnection">
+      <wsdl:documentation>Tests the connection to an endpoint</wsdl:documentation>
+      <wsdl:input message="tns:TestConnection"/>
+      <wsdl:output message="tns:TestConnectionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ListObjects">
+      <wsdl:documentation>Lists the available objects</wsdl:documentation>
+      <wsdl:input message="tns:ListObjects"/>
+      <wsdl:output message="tns:ListObjectsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeObject">
+      <wsdl:documentation>Returns the metadata for a given object type</wsdl:documentation>
+      <wsdl:input message="tns:DescribeObject"/>
+      <wsdl:output message="tns:DescribeObjectResponse"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="Create">
+      <wsdl:documentation>Creates objects</wsdl:documentation>
+      <wsdl:input message="tns:CreateRequest"/>
+      <wsdl:output message="tns:CreateResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Destroy">
+      <wsdl:documentation>Destroys objects</wsdl:documentation>
+      <wsdl:input message="tns:DestroyRequest"/>
+      <wsdl:output message="tns:DestroyResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:documentation>Retrieves objects</wsdl:documentation>
+      <wsdl:input message="tns:GetRequest"/>
+      <wsdl:output message="tns:GetResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="LookupIDForName">
+      <wsdl:documentation>Looks up IDs by object type</wsdl:documentation>
+      <wsdl:input message="tns:LookupIDForNameRequest"/>
+      <wsdl:output message="tns:LookupIDForNameResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Move">
+      <wsdl:documentation>Move objects</wsdl:documentation>
+      <wsdl:input message="tns:MoveRequest"/>
+      <wsdl:output message="tns:MoveResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="SQLGetInt">
+      <wsdl:documentation>Looks up IDs by SQL query</wsdl:documentation>
+      <wsdl:input message="tns:SQLGetIntRequest"/>
+      <wsdl:output message="tns:SQLGetIntResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="SQLGetStr">
+      <wsdl:documentation>Looks up string data by SQL query</wsdl:documentation>
+      <wsdl:input message="tns:SQLGetStrRequest"/>
+      <wsdl:output message="tns:SQLGetStrResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="SQLGetTime">
+      <wsdl:documentation>Looks up create and update times by SQL query</wsdl:documentation>
+      <wsdl:input message="tns:SQLGetTimeRequest"/>
+      <wsdl:output message="tns:SQLGetTimeResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:documentation>Searches for objects</wsdl:documentation>
+      <wsdl:input message="tns:SearchRequest"/>
+      <wsdl:output message="tns:SearchResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:documentation>Updates objects</wsdl:documentation>
+      <wsdl:input message="tns:UpdateRequest"/>
+      <wsdl:output message="tns:UpdateResponse"/>
+      <wsdl:fault message="tns:RightNowLoginErrorFault" name="RightNowLoginErrorFault"/>
+      <wsdl:fault message="tns:RightNowConnectorFault" name="RightNowConnectorFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapBinding" type="tns:Soap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="TestConnection">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListObjects">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescribeObject">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Destroy">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LookupIDForName">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Move">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SQLGetInt">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SQLGetStr">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SQLGetTime">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+         <soap:header use="literal" message="tns:details" part="details"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RightNowLoginErrorFault">
+        <soap:fault name="RightNowLoginErrorFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="RightNowConnectorFault">
+        <soap:fault name="RightNowConnectorFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CIConnectorService">
+    <wsdl:documentation>Cast Iron RightNow SOAP API with support for RightNow 9.11</wsdl:documentation>
+    <wsdl:port binding="tns:SoapBinding" name="Soap">
+      <soap:address location="http://{property:/DataIP}:{property:/Port}/RightNow_Connector/1.0.0.1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

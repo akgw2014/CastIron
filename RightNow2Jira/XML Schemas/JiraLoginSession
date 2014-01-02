@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="JiraLoginSession.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="loginInfo"/><xs:element ref="session"/></xs:sequence></xs:complexType></xs:element><xs:element name="session">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="loginInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="loginCount" type="xs:string"/><xs:element name="failedLoginCount" type="xs:string"/><xs:element name="previousLoginTime" type="xs:string"/><xs:element name="lastFailedLoginTime" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

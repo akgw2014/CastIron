@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><userScript xmlns="http://www.approuter.com/schemas/2003/1/UserCallouts/"><functionName>CompareRNJiraFields</functionName><arguments><argument required="true" type="string" name="RNSeverity"/><argument required="true" type="string" name="JiraSeverity"/><argument required="true" type="string" name="RNIncNum"/><argument required="true" type="string" name="JiraRNIncNum"/><argument required="true" type="string" name="RNRefNum"/><argument required="true" type="string" name="JiraRefNum"/><argument required="true" type="string" name="RN3rdParty"/><argument required="true" type="string" name="Jira3rdParty"/><argument required="true" type="string" name="RNCustRefNum"/><argument required="true" type="string" name="JiraCustRefNum"/><argument required="true" type="string" name="RNCustCont"/><argument required="true" type="string" name="JiraCustCont"/><argument required="true" type="string" name="RNProdLevel1"/><argument required="true" type="string" name="JiraProdLevel1"/><argument required="true" type="string" name="RNProdLevel2"/><argument required="true" type="string" name="JiraProdLevel2"/><argument required="true" type="string" name="RNUrgency"/><argument required="true" type="string" name="JiraUrgency"/><argument required="true" type="string" name="RNAction"/><argument required="true" type="string" name="JiraAction"/><argument required="true" type="string" name="RNProdVer"/><argument required="true" type="string" name="JiraProdVer"/><argument required="true" type="string" name="RNOrgName"/><argument required="true" type="string" name="JiraOrgName"/><argument required="true" type="string" name="RNSupportEscOwner"/><argument required="true" type="string" name="JiraSupportEscOwner"/><argument required="true" type="string" name="RNPMEscOwner"/><argument required="true" type="string" name="JiraPMEscOwner"/><argument required="true" type="string" name="RNSynopsis"/><argument required="true" type="string" name="JiraSynopsis"/><argument required="true" type="string" name="RNAnalysis"/><argument required="true" type="string" name="JiraAnalysis"/><argument required="true" type="string" name="RNCurrStatus"/><argument required="true" type="string" name="JiraCurrStatus"/><argument required="true" type="string" name="RNNextSteps"/><argument required="true" type="string" name="JiraNextSteps"/><argument required="true" type="string" name="RNSolution"/><argument required="true" type="string" name="JiraSolution"/><argument required="true" type="string" name="RNEscNote"/><argument required="true" type="string" name="JiraEscNote"/><argument required="true" type="string" name="RNShortTermReq"/><argument required="true" type="string" name="JiraShortTermReq"/><argument required="true" type="string" name="RNLongTermReq"/><argument required="true" type="string" name="JiraLongTermReq"/><argument required="true" type="string" name="RNFixByVersion"/><argument required="true" type="string" name="JiraFixByVersion"/><argument required="true" type="string" name="RNPMCommitment"/><argument required="true" type="string" name="JiraPMCommitment"/><argument required="true" type="string" name="RNCustCommitment"/><argument required="true" type="string" name="JiraCustCommitment"/><argument required="true" type="string" name="RNDevCurrStatus"/><argument required="true" type="string" name="JiraDevCurrStatus"/><argument required="true" type="string" name="RNEnvAff"/><argument required="true" type="string" name="JiraEnvAff"/><argument required="true" type="string" name="RNStatus"/><argument required="true" type="string" name="JiraRNStatus"/></arguments><result type="string"/><body>var flag='N';
+var pvalue;
+if(RNSeverity != JiraSeverity)
+{
+flag='Y';
+pvalue= 'Severity';
+}
+if(RNIncNum != JiraRNIncNum)
+{
+flag='Y';
+pvalue=pvalue+','+ 'IncNum';
+}
+if(RNRefNum != JiraRefNum)
+{
+flag='Y';
+pvalue=pvalue+',' +'RefNum';
+}
+if(RN3rdParty != Jira3rdParty)
+{
+flag='Y';
+pvalue=pvalue+',' +'3rdParty';
+}
+if(RNCustRefNum != JiraCustRefNum)
+{
+flag='Y';
+pvalue=pvalue+',' +'CustRefNum';
+}
+if(RNCustCont != JiraCustCont)
+{
+flag='Y';
+pvalue=pvalue+',' +'CustContact';
+}
+if(RNProdLevel1 != JiraProdLevel1)
+{
+flag='Y';
+pvalue=pvalue+',' +'ProdLevel1';
+}
+if(RNProdLevel2 != JiraProdLevel2)
+{
+flag='Y';
+pvalue=pvalue+',' +'ProdLevel2';
+}
+if(RNUrgency != JiraUrgency)
+{
+flag='Y';
+pvalue=pvalue+',' +'Urgency';
+}
+if(RNAction != JiraAction)
+{
+flag='Y';
+pvalue=pvalue+',' +'Action';
+}
+if(RNProdVer != JiraProdVer)
+{
+flag='Y';
+pvalue=pvalue+',' +'ProdVersion';
+}
+if(RNOrgName != JiraOrgName)
+{
+flag='Y';
+pvalue=pvalue+',' +'OrgName';
+}
+if(RNSupportEscOwner!= JiraSupportEscOwner)
+{
+flag='Y';
+pvalue=pvalue+',' +'SuppEscOwn';
+}
+if(RNPMEscOwner != JiraPMEscOwner)
+{
+flag='Y';
+pvalue=pvalue+',' +'PMEscOwner';
+}
+if(RNSynopsis != JiraSynopsis)
+{
+flag='Y';
+pvalue=pvalue+',' +'Synopsis';
+}
+if(RNAnalysis != JiraAnalysis)
+{
+flag='Y';
+pvalue=pvalue+',' +'Analysis';
+}
+if(RNCurrStatus != JiraCurrStatus)
+{
+flag='Y';
+pvalue=pvalue+',' +'CurrStatus';
+}
+if(RNNextSteps != JiraNextSteps)
+{
+flag='Y';
+pvalue=pvalue+',' +'NextSteps';
+}
+if(RNSolution != JiraSolution)
+{
+flag='Y';
+pvalue=pvalue+',' +'Solution';
+}
+if(RNEscNote != JiraEscNote)
+{
+flag='Y';
+pvalue=pvalue+',' +'EscNote';
+}
+if(RNShortTermReq != JiraShortTermReq)
+{
+flag='Y';
+pvalue=pvalue+',' +'ShortTermReq';
+}
+if(RNLongTermReq != JiraLongTermReq)
+{
+flag='Y';
+pvalue=pvalue+',' +'LongTermReq';
+}
+if(RNFixByVersion != JiraFixByVersion)
+{
+flag='Y';
+pvalue=pvalue+',' +'FixByVer';
+}
+if(RNPMCommitment != JiraPMCommitment)
+{
+flag='Y';
+pvalue=pvalue+',' +'PMCommit';
+}
+if(RNCustCommitment != JiraCustCommitment)
+{
+flag='Y';
+pvalue=pvalue+',' +'CustCommit';
+}
+if(RNDevCurrStatus != JiraDevCurrStatus)
+{
+flag='Y';
+pvalue=pvalue+',' +'DevCurrStatus';
+}
+if(RNEnvAff != JiraEnvAff)
+{
+flag='Y';
+pvalue=pvalue+',' +'EnvAff';
+}
+if(RNStatus != JiraRNStatus)
+{
+flag='Y';
+pvalue=pvalue+',' +'RNStatus';
+}
+
+return flag + 'Names' + pvalue;</body></userScript>

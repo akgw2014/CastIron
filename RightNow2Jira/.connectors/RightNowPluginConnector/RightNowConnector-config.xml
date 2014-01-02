@@ -1,0 +1,160 @@
+<!--
+  Cast Iron RightNow Connector
+  Compatible with RightNow Nov09 Release (API version 9.11)
+  RightNow config XML for RightNow 9.11
+  Copyright 2010 Cast Iron Systems, Inc.
+  
+  Author: Cast Iron Systems
+  Version 1.0.0
+
+  Licensed Materials - Property of IBM
+  Restricted Materials of IBM
+  92358CX, 92358DX, 92358FX, 92358GX, 92358HX, 92358JX, D0H3PLL, D0H44LL, D0H3VLL, D0H47LL
+  Copyright IBM Corp. 2003, 2010 All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<con:connectorConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.approuter.com/schemas/cdk/config/ ci-connector-config.xsd"
+  xmlns:con="http://www.approuter.com/schemas/cdk/config/" category="ERP" name="RightNowPluginConnector"
+  label="RightNow" version="1.0.0.2"
+  notes="Refresh of RightNow connector for 6.1.0.9 release."
+  release-date="2012-08-03T00:00:00.0Z"
+  connection-ns="http://www.approuter.com/schemas/module/rightnow/connection/">
+  <con:description>Cast Iron RightNow Connector</con:description>
+  <con:endpoint name="RightNow" endpoint-name="RightNow">
+    <con:field-group name="details" label="Connection Details">
+      <con:field name="Server" label="Server" configurable="true">
+        <con:type>string</con:type>
+        <con:default-value>castiron911.rightnowdemo.com</con:default-value>
+        <con:value-restriction>
+          <con:min-length value="1"/>
+        </con:value-restriction>
+      </con:field>
+      <con:field name="ServerPort" label="Server Port" configurable="true">
+        <con:type>int</con:type>
+        <con:default-value>80</con:default-value>
+        <con:field-restriction>
+          <con:value-range>
+            <con:min>1</con:min>
+            <con:max>49151</con:max>
+          </con:value-range>
+        </con:field-restriction>
+      </con:field>
+      <con:field name="URI" label="URI" configurable="true">
+        <con:type>string</con:type>
+        <con:default-value>/cgi-bin/castiron911.cfg/php/xml_api/parse.php</con:default-value>
+      </con:field>
+      <con:field name="ServerSecure" label="Secure" configurable="false">
+        <con:type>boolean</con:type>
+        <con:default-value>false</con:default-value>
+      </con:field>
+      <con:field name="SecureStr" label="Security String" configurable="true">
+        <con:type>string</con:type>
+        <con:default-value>true</con:default-value>
+        <con:format>password</con:format>
+      </con:field>
+    </con:field-group>
+    <con:test-connection-action
+      short-description="Tests the connection to the RightNow endpoint system"/>
+    <con:endpoint-description>RightNow Endpoint description</con:endpoint-description>
+  </con:endpoint>
+  <con:activity-group>
+    <con:activity name="createObject" label="Create Object">
+      <con:operation-name>Create</con:operation-name>
+      <con:description>RightNow Create Object</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>browse</con:type>
+          <con:applies-to>inputs</con:applies-to>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="getObject" label="Get Object">
+      <con:operation-name>Get</con:operation-name>
+      <con:description>RightNow Get Object</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>browse</con:type>
+          <con:applies-to>both</con:applies-to>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="destroyObject" label="Destroy Object">
+      <con:operation-name>Destroy</con:operation-name>
+      <con:description>RightNow Destroy Object</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>browse</con:type>
+          <con:applies-to>inputs</con:applies-to>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="moveObject" label="Move Object">
+      <con:operation-name>Move</con:operation-name>
+      <con:description>RightNow Move Object</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>browse</con:type>
+          <con:applies-to>inputs</con:applies-to>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="searchObject" label="Search Object">
+      <con:operation-name>Search</con:operation-name>
+      <con:description>RightNow Search Object</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>none</con:type>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="updateObject" label="Update Object">
+      <con:operation-name>Update</con:operation-name>
+      <con:description>RightNow Update Object</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>browse</con:type>
+          <con:applies-to>inputs</con:applies-to>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="sqlGetInt" label="SQLGetInt">
+      <con:operation-name>SQLGetInt</con:operation-name>
+      <con:description>Looks up IDs by SQL query</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>none</con:type>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="sqlGetStr" label="SQLGetStr">
+      <con:operation-name>SQLGetStr</con:operation-name>
+      <con:description>Looks up string data by SQL query</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>none</con:type>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="sqlGetTime" label="SQLGetTime">
+      <con:operation-name>SQLGetTime</con:operation-name>
+      <con:description>Looks up create and update times by SQL query</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>none</con:type>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+    <con:activity name="lookupIDForName" label="Lookup ID">
+      <con:operation-name>LookupIDForName</con:operation-name>
+      <con:description>RN Lookup ID</con:description>
+      <con:task-list>
+        <con:configure-task>
+          <con:type>none</con:type>
+        </con:configure-task>
+      </con:task-list>
+    </con:activity>
+  </con:activity-group>
+  <con:operations default-endpoint-location="local:///RightNow_Connector/1.0.0.1"/>
+</con:connectorConfiguration>
+

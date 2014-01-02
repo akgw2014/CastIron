@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="getIssue1.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soap.rpc.jira.atlassian.com" xmlns:tns="http://soap.rpc.jira.atlassian.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="getIssue2.xsd"/><xs:import namespace="http://hawk:8080/rpc/soap/jirasoapservice-v2" schemaLocation="getIssue.xsd"/><xs:element name="getIssueResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="q1:getIssueReturn" xmlns:q1="http://hawk:8080/rpc/soap/jirasoapservice-v2"/></xs:sequence><xs:attribute ref="q2:encodingStyle" use="required" xmlns:q2="http://schemas.xmlsoap.org/soap/envelope/"/></xs:complexType></xs:element></xs:schema></main><include name="getIssue2.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attribute name="encodingStyle" type="xs:string"/></xs:schema></include><include name="getIssue1.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soap.rpc.jira.atlassian.com" xmlns:tns="http://soap.rpc.jira.atlassian.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="getIssue2.xsd"/><xs:import namespace="http://hawk:8080/rpc/soap/jirasoapservice-v2" schemaLocation="getIssue.xsd"/><xs:element name="getIssueResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="q1:getIssueReturn" xmlns:q1="http://hawk:8080/rpc/soap/jirasoapservice-v2"/></xs:sequence><xs:attribute ref="q2:encodingStyle" use="required" xmlns:q2="http://schemas.xmlsoap.org/soap/envelope/"/></xs:complexType></xs:element></xs:schema></include><include name="getIssue3.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attribute name="root" type="xs:unsignedByte"/><xs:attribute name="arrayType" type="xs:string"/></xs:schema></include><include name="getIssue.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://hawk:8080/rpc/soap/jirasoapservice-v2" xmlns:ns1="http://soap.rpc.jira.atlassian.com" xmlns:ns10="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns11="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns2="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns3="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns4="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns5="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns6="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns7="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns8="http://beans.soap.rpc.jira.atlassian.com" xmlns:ns9="http://beans.soap.rpc.jira.atlassian.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xs:import namespace="http://soap.rpc.jira.atlassian.com" schemaLocation="getIssue1.xsd"/><xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="getIssue3.xsd"/><xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="getIssue2.xsd"/><xs:element name="getIssueResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ns1:getIssueResponse"/><xs:element maxOccurs="unbounded" name="multiRef">
+					<xs:complexType mixed="true">
+						<xs:sequence minOccurs="0">
+							<xs:element minOccurs="0" name="customfieldId" type="xs:string"/><xs:element minOccurs="0" name="affectsVersions">
+								<xs:complexType>
+									<xs:attribute ref="soapenc:arrayType" use="required"/></xs:complexType></xs:element><xs:element minOccurs="0" name="assignee" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="attachmentNames">
+								<xs:complexType>
+									<xs:attribute ref="soapenc:arrayType" use="required"/></xs:complexType></xs:element><xs:element minOccurs="0" name="components">
+								<xs:complexType>
+									<xs:attribute ref="soapenc:arrayType" use="required"/></xs:complexType></xs:element><xs:element minOccurs="0" name="created" type="xs:dateTime"/><xs:element minOccurs="0" name="customFieldValues">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="customFieldValues">
+											<xs:complexType>
+												<xs:attribute name="href" type="xs:string" use="required"/></xs:complexType></xs:element></xs:sequence><xs:attribute ref="soapenc:arrayType" use="required"/></xs:complexType></xs:element><xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="duedate" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="environment" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="fixVersions">
+								<xs:complexType>
+									<xs:attribute ref="soapenc:arrayType" use="required"/></xs:complexType></xs:element><xs:element minOccurs="0" name="id" type="xs:unsignedInt"/><xs:element name="key" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="values">
+								<xs:complexType>
+									<xs:sequence minOccurs="0">
+										<xs:element name="values" type="xs:string"/></xs:sequence><xs:attribute ref="soapenc:arrayType" use="required"/></xs:complexType></xs:element><xs:element minOccurs="0" name="priority" type="xs:unsignedByte"/><xs:element minOccurs="0" name="project" type="xs:string"/><xs:element minOccurs="0" name="reporter" type="xs:string"/><xs:element minOccurs="0" name="resolution" nillable="true" type="xs:string"/><xs:element minOccurs="0" name="status" type="xs:unsignedByte"/><xs:element minOccurs="0" name="summary" type="xs:string"/><xs:element minOccurs="0" name="type" type="xs:unsignedByte"/><xs:element minOccurs="0" name="updated" type="xs:dateTime"/><xs:element minOccurs="0" name="votes">
+								<xs:complexType>
+									<xs:attribute name="href" type="xs:string" use="required"/></xs:complexType></xs:element></xs:sequence><xs:attribute name="id" type="xs:string" use="required"/><xs:attribute ref="soapenc:root" use="required"/><xs:attribute ref="soapenv:encodingStyle" use="required"/></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element><xs:element name="getIssueReturn">
+		<xs:complexType>
+			<xs:attribute name="href" type="xs:string" use="required"/></xs:complexType></xs:element></xs:schema></include></document>

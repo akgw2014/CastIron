@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://soap.rpc.jira.atlassian.com" xmlns:ns1="http://soap.rpc.jira.atlassian.com" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xs:element name="loginResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="loginReturn" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

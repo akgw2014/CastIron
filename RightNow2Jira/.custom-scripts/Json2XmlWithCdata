@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><userScript xmlns="http://www.approuter.com/schemas/2003/1/UserCallouts/"><functionName>Json2XmlWithCdata</functionName><arguments><argument required="true" type="string" name="o"/></arguments><result type="string"/><body>   var toXml = function(v, name, ind) {
+      var xml = "";
+      if (v instanceof Array) {
+         for (var i=0, n=v.length; i&lt;n; i++)
+            xml += ind + toXml(v[i], name, ind+"\t") + "\n";
+      }
+      else if (typeof(v) == "object") {
+         var hasChild = false;
+         xml += ind + "&lt;" + name;
+         for (var m in v) {
+            if (m.charAt(0) == "@")
+               xml += " " + m.substr(1) + "=\"" + v[m].toString() + "\"";
+            else
+               hasChild = true;
+         }
+         xml += hasChild ? "&gt;" : "/&gt;";
+         if (hasChild) {
+            for (var m in v) {
+               if (m == "#text")
+                  xml += v[m];
+               else if (m == "#cdata")
+                  xml += "&lt;![CDATA[" + v[m] + "]]&gt;";
+               else if (m.charAt(0) != "@")
+                  xml += toXml(v[m], m, ind+"\t");
+            }
+            xml += (xml.charAt(xml.length-1)=="\n"?ind:"") + "&lt;/" + name + "&gt;";
+         }
+      }
+      else {
+         xml += ind + "&lt;" + name + "&gt;&lt;![CDATA[" + v.toString().replace(/]]&gt;/gi,"]]]]&gt;&lt;![CDATA[&gt;") + "]]&gt;&lt;/" + name + "&gt;";
+      }
+      return xml;
+   }, xml="";
+  var jobj = eval('(' + o + ')');
+  var tab = '';
+   for (var m in jobj)
+      xml += toXml(jobj[m], m, '');
+   xml = '&lt;root&gt;' + xml + '&lt;/root&gt;';
+   return tab ? xml.replace(/\t/g, tab) : xml.replace(/\t|\n/g, "");</body></userScript>

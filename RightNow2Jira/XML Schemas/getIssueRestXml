@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="transitions" type="xs:string"/><xs:element name="expand" type="xs:string"/><xs:element name="key" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="fields">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="customfield_10050">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="fixVersions">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10020">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10021">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10022">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10023">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="summary">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10440">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="security">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10441">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="environment">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10442">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="created">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10443">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10444">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10445">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="reporter">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="active" type="xs:boolean"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="displayName" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10446">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10447">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="issuetype">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="name" type="xs:string"/><xs:element name="subtask" type="xs:boolean"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10448">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10449">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="links">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="votes">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="votes" type="xs:unsignedByte"/><xs:element name="hasVoted" type="xs:boolean"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10060">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="comment">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element maxOccurs="unbounded" name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="created" type="xs:string"/><xs:element name="author">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="active" type="xs:boolean"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="displayName" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="updateAuthor">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="active" type="xs:boolean"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="displayName" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="self" type="xs:string"/><xs:element name="updated" type="xs:string"/><xs:element name="body" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10350">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10640">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:unsignedShort"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10641">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10642">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="status">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10645">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10740">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element maxOccurs="unbounded" name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="active" type="xs:boolean"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="displayName" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10452">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="components">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="worklog">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11241">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10454">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10455">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10456">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="attachment">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="created" type="xs:string"/><xs:element name="mimeType" type="xs:string"/><xs:element name="content" type="xs:string"/><xs:element name="author">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="active" type="xs:boolean"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/><xs:element name="displayName" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="size" type="xs:unsignedByte"/><xs:element name="self" type="xs:string"/><xs:element name="filename" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10261">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10263">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10264">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:unsignedShort"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="priority">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10265">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10266">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:decimal"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10269">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="description">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="labels">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="sub-tasks">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11540">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11541">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="timetracking">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11543">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element maxOccurs="unbounded" name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11544">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10270">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="updated">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11545">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11546">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11547">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11548">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:unsignedInt"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_10210">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11549">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value" type="xs:unsignedInt"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="watcher">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="isWatching" type="xs:boolean"/><xs:element name="watchCount" type="xs:unsignedByte"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11640">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="self" type="xs:string"/><xs:element name="value" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="project">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="value">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="roles"/><xs:element name="key" type="xs:string"/><xs:element name="name" type="xs:string"/><xs:element name="self" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="customfield_11641">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="assignee">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element><xs:element name="versions">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="type" type="xs:string"/><xs:element name="name" type="xs:string"/></xs:sequence></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

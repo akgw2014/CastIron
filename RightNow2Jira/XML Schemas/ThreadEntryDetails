@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="ThreadEntryDetails.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema targetNamespace="http://www.rightnow.com/objects" xmlns="http://www.rightnow.com/objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="thread">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="thread_entry">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="acct_id" type="xs:int"/><xs:element name="c_id" type="xs:int"/><xs:element name="channel" type="xs:int"/><xs:element name="entered" type="xs:string"/><xs:element name="entry_type" type="xs:int"/><xs:element name="note" type="xs:string"/><xs:element name="seq" type="xs:int"/><xs:element name="thread_id" type="xs:int"/></xs:sequence></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>

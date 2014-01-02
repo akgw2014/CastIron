@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xs:schema targetNamespace="http://www.rightnow.com/objects" xmlns="http://www.rightnow.com/objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="thread_id--integer" type="xs:int"/><xs:element name="thread_entry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="acct_id--integer" type="xs:int"/><xs:element name="entered--integer" type="xs:string"/><xs:element name="entry_type--integer" type="xs:int"/><xs:element name="note--string" type="xs:string"/><xs:element name="seq--integer" type="xs:int"/><xs:element name="thread_id--integer" type="xs:int"/></xs:sequence></xs:complexType></xs:element></xs:schema></main></document>
