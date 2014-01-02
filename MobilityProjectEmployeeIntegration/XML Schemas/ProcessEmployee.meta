@@ -1,0 +1,16 @@
+<com.approuter.studio.repository.model.EntryMetaData>
+  <__metaData>
+    <properties>
+      <entry>
+        <string>variables</string>
+        <list>
+          <string>ProcessEmployee</string>
+        </list>
+      </entry>
+    </properties>
+  </__metaData>
+  <__namespace>http://www.approuter.com/schemas/2003/1/xmlschema/</__namespace>
+  <__valid>true</__valid>
+  <__hidden>false</__hidden>
+  <__guid>FBCDE57FAFDE30A7A64B9B36738DAC37</__guid>
+</com.approuter.studio.repository.model.EntryMetaData>

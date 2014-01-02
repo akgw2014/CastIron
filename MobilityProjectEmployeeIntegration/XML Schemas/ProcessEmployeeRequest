@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document><main name="ProcessEmployeeRequest.xsd" type="http://www.approuter.com/schemas/2003/1/xmlschema/"><xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.guidewire.comProcessEmployeeRequest/V1" xmlns="http://www.guidewire.comProcessEmployeeRequest/V1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="ProcessEmployeeRequest" type="ProcessEmployeeRequestType"/><xsd:complexType name="ProcessEmployeeRequestType">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="ApplicationData" type="ApplicationDataType"/><xsd:element maxOccurs="unbounded" minOccurs="0" name="EmployeeIds" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="ApplicationDataType">
+		<xsd:sequence>
+			<xsd:element name="ProcessStatus" type="xsd:string"/><xsd:element name="DataCount" type="xsd:integer"/><xsd:element name="ProcessStatusMessgae" type="xsd:string"/><xsd:element name="ProcessErrorMessgae" type="xsd:string"/><xsd:element name="ApplicationSource" type="xsd:string"/></xsd:sequence></xsd:complexType></xsd:schema></main></document>
